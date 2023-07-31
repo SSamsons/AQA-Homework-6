@@ -82,9 +82,7 @@ class MoneyTransferTest {
         var clearFrom = transferPage.clearFrom();
         var cardNumber = DataHelper.getSecondCardNumber();
         moneyTransferPage.transferFrom(sum, cardNumber);
-
-        assertEquals(secondCardBalance - Integer.parseInt(sum), dashboardPage.getSecondCardBalance());
-        assertEquals(firstCardBalance + Integer.parseInt(sum), dashboardPage.getFirstCardBalance());
+        moneyTransferPage.getError();
     }
 
     @Test
